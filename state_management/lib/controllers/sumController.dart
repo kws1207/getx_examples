@@ -26,7 +26,7 @@ class SumController extends GetxController {
     once(count1, (_) => print("$_ was changed once"));
 
     /// Called once there has been no action on observable for 1 second
-    debounce(count1, (_) => print("debouce$_"), time: Duration(seconds: 1));
+    debounce(count1, (_) => print("debounce $_"), time: Duration(seconds: 1));
 
     /// Only reads the observable every 1 second
     interval(count1, (_) => print("interval $_"), time: Duration(seconds: 1));

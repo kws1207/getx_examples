@@ -9,8 +9,7 @@ void main() {
       //don't need 'Get' before Material App if you're only using State Management
       home: First(),
       theme: ThemeData(
-        accentColor: Colors.purpleAccent,
-        primaryColor: Colors.purple,
+        colorScheme: ColorScheme.light(),
       ),
     ),
   );

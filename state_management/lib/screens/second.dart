@@ -47,13 +47,13 @@ class Second extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Increment Counter #1"),
               onPressed: () {
                 sumController.increment();
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Increment Counter #2"),
               onPressed: () {
                 sumController.increment2();

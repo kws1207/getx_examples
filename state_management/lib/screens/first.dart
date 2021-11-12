@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reference/controllers/sumController.dart';
 import 'package:reference/controllers/countController.dart';
 import 'package:reference/controllers/userController.dart';
 import 'package:reference/screens/second.dart';
 
 class First extends StatelessWidget {
   final CountController countController = Get.put(CountController());
+  final SumController sumController = Get.put(SumController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +41,7 @@ class First extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Update Name & Stored Count"),
               onPressed: () {
                 Get.find<UserController>().updateUser(Get.find<
@@ -50,11 +52,16 @@ class First extends StatelessWidget {
             SizedBox(
               height: 100,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text('Next Screen'),
               onPressed: () {
                 Get.to(Second());
               },
+            ),
+            Obx(
+              //Obx is very similar to GetX except 'lighter' so no parameters for init, dispose, etc
+              () => Text(
+                  'Stored Sum: ${Get.find<SumController>().sum.toString()}'),
             ),
           ],
         ),
